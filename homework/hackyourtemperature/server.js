@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+const PORT = 3000;
 
 app.use(express.json());
 
@@ -12,8 +13,6 @@ app.post("/weather", (req, res) => {
   const cityName = req.body.cityName;
   res.send(cityName);
 });
-
-const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Running on PORT ${PORT}`);
