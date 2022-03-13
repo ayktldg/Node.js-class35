@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/weather", async (req, res) => {
-  const cityName = req.body.cityName;
+  const { cityName } = req.body;
   try {
     const weatherData = await getWeatherData(cityName);
     if (weatherData.cod === 200) {
